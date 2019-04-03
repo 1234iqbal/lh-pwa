@@ -5,14 +5,9 @@ import "./asset/css/master.css";
 class App extends Component {
   render() {
     return (
-      <Router>
-        <div>
-          <Route path="/" exact component={Landing_page} />
-          <Route path="/Kampanye" exact component={Landing_page} />
-          <Route path="/Donasi" exact component={Landing_page} />
-          <Route path="/dll" exact component={Landing_page} />
-        </div>
-      </Router>
+      <div>
+        <h2>hello</h2>
+      </div>
     );
   }
 }

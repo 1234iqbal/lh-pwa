@@ -9,9 +9,9 @@ class App extends Component {
       <Router>
         <div>
           <Route path="/" exact component={Landing_page} />
-          <Route path="/Kampanye" exact component={Campaign} />
-          <Route path="/Donasi" exact component={Landing_page} />
-          <Route path="/dll" exact component={Landing_page} />
+          <Route path="/Kampanye" component={Campaign} />
+          <Route path="/Donasi" component={Landing_page} />
+          <Route path="/dll" component={Landing_page} />
         </div>
       </Router>
     );

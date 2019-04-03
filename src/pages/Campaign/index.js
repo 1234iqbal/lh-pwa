@@ -7,7 +7,7 @@ export default class index extends Component {
     return (
       <div>
         <Navbar />
-        <div style={{ margin: 24 }}>
+        <div style={{ margin: 24, paddingBottom: "20%" }}>
           <img
             width="100%"
             height="200px"

@@ -4,6 +4,7 @@ import Bottom_Navigation from "../../component/Bottom_Navigation";
 import Carausel from "../../component/Carausel";
 import Card from "../../component/Card";
 import Grid from "@material-ui/core/Grid";
+import { Link } from "react-router-dom";
 
 export default class index extends Component {
   state = {
@@ -28,12 +29,14 @@ export default class index extends Component {
             spacing={8}
             style={{
               paddingTop: 15,
-              paddingBottom: "12%"
+              paddingBottom: "15%"
             }}
           >
             {this.state.text.map(res => (
               <Grid item xs={4}>
-                <Card title={res} img={this.state.image} />
+                <Link to="/kampanye">
+                  <Card title={res} img={this.state.image} />
+                </Link>
               </Grid>
             ))}
           </Grid>

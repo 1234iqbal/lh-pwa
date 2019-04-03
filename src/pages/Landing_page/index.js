@@ -22,13 +22,22 @@ export default class index extends Component {
       <div>
         <Navbar />
         <Carausel />
-        <Grid container style={{ paddingTop: 15, paddingBottom: "12%" }}>
-          {this.state.text.map(res => (
-            <Grid item xs={4}>
-              <Card title={res} img={this.state.image} />
-            </Grid>
-          ))}
-        </Grid>
+        <div style={{ margin: 24 }}>
+          <Grid
+            container
+            spacing={8}
+            style={{
+              paddingTop: 15,
+              paddingBottom: "12%"
+            }}
+          >
+            {this.state.text.map(res => (
+              <Grid item xs={4}>
+                <Card title={res} img={this.state.image} />
+              </Grid>
+            ))}
+          </Grid>
+        </div>
         <Bottom_Navigation />
       </div>
     );

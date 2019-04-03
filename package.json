@@ -7,9 +7,11 @@
     "react-dom": "^16.8.6",
     "react-router-dom": "^5.0.0",
     "react-scripts": "2.1.8",
-    "react-swipeable-views": "0.13.1",
     "@material-ui/core": "3.9.3",
-    "@material-ui/icons": "3.0.2"
+    "@material-ui/icons": "3.0.2",
+    "react-swipeable-views": "0.13.1",
+    "react-swipeable-views-utils": "0.13.1",
+    "react-swipeable": "5.1.0"
   },
   "scripts": {
     "start": "react-scripts start",

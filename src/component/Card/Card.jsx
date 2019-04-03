@@ -33,9 +33,9 @@ function Cards(props) {
           title="Contemplative Reptile"
         />
         <CardContent>
-          <Typography gutterBottom variant="h6" component="h6">
+          {/* <Typography gutterBottom variant="h6" component="h6">
             kampanye
-          </Typography>
+          </Typography> */}
           {/* <Typography component="p">
             Lizards are a widespread group of squamate reptiles, with over 6,000
             species, ranging across all continents except Antarctica

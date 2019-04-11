@@ -4,7 +4,7 @@ import { withStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
 import Typography from "@material-ui/core/Typography";
-
+import { Link } from "react-router-dom";
 const styles = {
   root: {
     paddingTop: "150px",
@@ -57,9 +57,11 @@ function Index(props) {
       />
       <br />
 
-      <Button size="large" variant="contained" className={classes.button}>
-        Masuk
-      </Button>
+      <Link to="/home">
+        <Button size="large" variant="contained" className={classes.button}>
+          Masuk
+        </Button>
+      </Link>
     </div>
   );
 }

@@ -57,7 +57,7 @@ function Index(props) {
       />
       <br />
 
-      <Link to="/home">
+      <Link to="/home" className="link">
         <Button size="large" variant="contained" className={classes.button}>
           Masuk
         </Button>

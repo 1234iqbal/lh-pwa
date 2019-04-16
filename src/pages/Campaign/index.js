@@ -7,7 +7,9 @@ export default class index extends Component {
     return (
       <div>
         <Navbar />
-        <div style={{ margin: 24, paddingBottom: "20%" }}>
+        <div style={{ paddingBottom: "58px" }}>
+          <Campaign />
+          <Campaign />
           <Campaign />
         </div>
         <Bottom_Navigation />

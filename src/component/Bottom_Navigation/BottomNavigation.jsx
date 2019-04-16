@@ -3,10 +3,10 @@ import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import BottomNavigation from "@material-ui/core/BottomNavigation";
 import BottomNavigationAction from "@material-ui/core/BottomNavigationAction";
-import Icon from "@material-ui/core/Icon";
 import RestoreIcon from "@material-ui/icons/Restore";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import LocationOnIcon from "@material-ui/icons/LocationOn";
+import HomeIcon from "@material-ui/icons/Home";
 import { Link } from "react-router-dom";
 
 const styles = {
@@ -46,7 +46,7 @@ class Bottom_Navigation extends React.Component {
             label="Beranda"
             value="Beranda"
             className={classes.site}
-            icon={<RestoreIcon />}
+            icon={<HomeIcon />}
           />
         </Link>
         <Link to="/Kampanye">

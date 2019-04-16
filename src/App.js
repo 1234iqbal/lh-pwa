@@ -7,6 +7,7 @@ import Register from "./pages/Register";
 import Profile from "./pages/Profile";
 import "./asset/css/master.css";
 import Donasi from "./pages/Donasi";
+import Detail_Campaign from "./pages/Detail_Campaign";
 class App extends Component {
   render() {
     return (
@@ -17,6 +18,7 @@ class App extends Component {
           <Route path="/profile" exact component={Profile} />
           <Route path="/home" exact component={Landing_page} />
           <Route path="/Kampanye" exact component={Campaign} />
+          <Route path="/detail-kampanye" exact component={Detail_Campaign} />
           <Route path="/Donasi" exact component={Donasi} />
           <Route path="/dll" exact component={Landing_page} />
         </div>

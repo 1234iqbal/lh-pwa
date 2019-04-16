@@ -1,3 +1,7 @@
 .color-primary {
   background: #26a69a;
 }
+
+.link {
+  text-decoration: none;
+}

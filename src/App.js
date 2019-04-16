@@ -6,6 +6,7 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Profile from "./pages/Profile";
 import "./asset/css/master.css";
+import Donasi from "./pages/Donasi";
 class App extends Component {
   render() {
     return (
@@ -15,9 +16,9 @@ class App extends Component {
           <Route path="/register" exact component={Register} />
           <Route path="/profile" exact component={Profile} />
           <Route path="/home" exact component={Landing_page} />
-          <Route path="/Kampanye" component={Campaign} />
-          <Route path="/Donasi" component={Landing_page} />
-          <Route path="/dll" component={Landing_page} />
+          <Route path="/Kampanye" exact component={Campaign} />
+          <Route path="/Donasi" exact component={Donasi} />
+          <Route path="/dll" exact component={Landing_page} />
         </div>
       </Router>
     );

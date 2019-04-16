@@ -41,38 +41,40 @@ class Bottom_Navigation extends React.Component {
         onChange={this.handleChange}
         className={classes.root + " " + classes.primary}
       >
-        <BottomNavigationAction
-          label="Beranda"
-          value="Beranda"
-          as={Link}
-          to="/"
-          className={classes.site}
-          icon={<RestoreIcon />}
-        />
-        <BottomNavigationAction
-          label="Kampanye"
-          value="Kampanye"
-          as={Link}
-          to="/Kampanye"
-          className={classes.site}
-          icon={<FavoriteIcon />}
-        />
-        <BottomNavigationAction
-          label="Donasi"
-          value="Donasi"
-          as={Link}
-          to="/donasi"
-          className={classes.site}
-          icon={<LocationOnIcon />}
-        />
-        <BottomNavigationAction
-          label="Dll"
-          value="dll"
-          as={Link}
-          to="/dll"
-          className={classes.site}
-          icon={<LocationOnIcon />}
-        />
+        <Link to="/home">
+          <BottomNavigationAction
+            label="Beranda"
+            value="Beranda"
+            className={classes.site}
+            icon={<RestoreIcon />}
+          />
+        </Link>
+        <Link to="/Kampanye">
+          <BottomNavigationAction
+            label="Kampanye"
+            value="Kampanye"
+            as={Link}
+            to="/Kampanye"
+            className={classes.site}
+            icon={<FavoriteIcon />}
+          />
+        </Link>
+        <Link to="/Donasi">
+          <BottomNavigationAction
+            label="Donasi"
+            value="Donasi"
+            className={classes.site}
+            icon={<LocationOnIcon />}
+          />
+        </Link>
+        <Link to="/profile">
+          <BottomNavigationAction
+            label="Profile"
+            value="Profile"
+            className={classes.site}
+            icon={<FavoriteIcon />}
+          />
+        </Link>
       </BottomNavigation>
     );
   }

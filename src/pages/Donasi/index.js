@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Navbar from "../../component/Navbar";
-import Campaign from "./Campaign";
+import Donasi from "./Donasi";
 import Bottom_Navigation from "../../component/Bottom_Navigation";
 export default class index extends Component {
   render() {
@@ -8,7 +8,7 @@ export default class index extends Component {
       <div>
         <Navbar />
         <div style={{ margin: 24, paddingBottom: "20%" }}>
-          <Campaign />
+          <Donasi />
         </div>
         <Bottom_Navigation />
       </div>

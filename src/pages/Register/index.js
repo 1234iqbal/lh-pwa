@@ -4,7 +4,7 @@ import { withStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
 import Typography from "@material-ui/core/Typography";
-
+import { Link } from "react-router-dom";
 const styles = {
   root: {
     paddingTop: "100px",
@@ -22,7 +22,9 @@ const styles = {
     color: "#045f50",
     fontFamily: "Bevan"
   },
-  textField: {}
+  textField: {
+    width: "70%"
+  }
 };
 
 function Register(props) {
@@ -77,10 +79,17 @@ function Register(props) {
         variant="outlined"
       />
       <br />
-
-      <Button size="large" variant="contained" className={classes.button}>
-        Daftar
-      </Button>
+      <Link to="/home" className="link">
+        <Button size="large" variant="contained" className={classes.button}>
+          Daftar
+        </Button>
+      </Link>
+      <div style={{ paddingTop: 30 }}>
+        Sudah punya akun Tokopedia?{" "}
+        <Link to="/" className="link">
+          Masuk
+        </Link>
+      </div>
     </div>
   );
 }

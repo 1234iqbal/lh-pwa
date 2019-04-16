@@ -22,7 +22,9 @@ const styles = {
     color: "#045f50",
     fontFamily: "Bevan"
   },
-  textField: {}
+  textField: {
+    width: "70%"
+  }
 };
 
 function Index(props) {
@@ -33,7 +35,6 @@ function Index(props) {
       <Typography variant="h4" className={classes.text} gutterBottom>
         Lindungi Hutan
       </Typography>
-
       <TextField
         id="outlined-email-input"
         label="Email"
@@ -45,7 +46,6 @@ function Index(props) {
         variant="outlined"
       />
       <br />
-
       <TextField
         id="outlined-password-input"
         label="Password"
@@ -56,12 +56,17 @@ function Index(props) {
         variant="outlined"
       />
       <br />
-
       <Link to="/home" className="link">
         <Button size="large" variant="contained" className={classes.button}>
           Masuk
         </Button>
       </Link>
+      <div style={{ paddingTop: 30 }}>
+        Belum punya akun Tokopedia?{" "}
+        <Link to="/register" className="link">
+          Daftar
+        </Link>
+      </div>
     </div>
   );
 }

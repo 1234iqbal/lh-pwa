@@ -85,7 +85,7 @@ function Register(props) {
         </Button>
       </Link>
       <div style={{ paddingTop: 30 }}>
-        Sudah punya akun lindungihutan??{" "}
+        Sudah punya akun lindungihutan?{" "}
         <Link to="/" className="link">
           Masuk
         </Link>

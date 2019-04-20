@@ -29,7 +29,7 @@ export default class index extends Component {
             spacing={8}
             style={{
               paddingTop: 15,
-              paddingBottom: "15%"
+              paddingBottom: "58px"
             }}
           >
             {this.state.text.map(res => (

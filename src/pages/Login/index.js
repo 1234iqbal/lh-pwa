@@ -62,7 +62,7 @@ function Index(props) {
         </Button>
       </Link>
       <div style={{ paddingTop: 30 }}>
-        Belum punya akun Tokopedia?{" "}
+        Belum punya akun lindungihutan?{" "}
         <Link to="/register" className="link">
           Daftar
         </Link>

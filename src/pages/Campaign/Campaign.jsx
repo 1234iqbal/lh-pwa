@@ -55,21 +55,21 @@ class Campaign extends React.Component {
 
     return (
       <Card className={classes.card}>
+        <CardHeader
+          avatar={
+            <Avatar aria-label="Recipe" className={classes.avatar}>
+              R
+            </Avatar>
+          }
+          action={
+            <IconButton>
+              <MoreVertIcon />
+            </IconButton>
+          }
+          title="Shrimp and Chorizo Paella"
+          subheader="September 14, 2016"
+        />
         <Link to="/detail-kampanye" className="link">
-          <CardHeader
-            avatar={
-              <Avatar aria-label="Recipe" className={classes.avatar}>
-                R
-              </Avatar>
-            }
-            action={
-              <IconButton>
-                <MoreVertIcon />
-              </IconButton>
-            }
-            title="Shrimp and Chorizo Paella"
-            subheader="September 14, 2016"
-          />
           <CardMedia
             className={classes.media}
             image="https://i0.wp.com/www.jakartatraveller.com/wp-content/uploads/2016/02/hutan-mangrove-jakarta-jakartatraveller-1.jpg?ssl=1"

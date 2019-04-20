@@ -3,27 +3,26 @@ import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import BottomNavigation from "@material-ui/core/BottomNavigation";
 import BottomNavigationAction from "@material-ui/core/BottomNavigationAction";
+import HomeIcon from "@material-ui/icons/Home";
 import RestoreIcon from "@material-ui/icons/Restore";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import LocationOnIcon from "@material-ui/icons/LocationOn";
-import HomeIcon from "@material-ui/icons/Home";
 import { Link } from "react-router-dom";
-
 const styles = {
   root: {
     width: "100%",
     position: "fixed",
     bottom: 0,
-    backgroundColor: "#26a69a"
+    backgroundColor: "#045f50"
   },
   site: {
     color: "#fff"
   }
 };
 
-class Bottom_Navigation extends React.Component {
+class SimpleBottomNavigation extends React.Component {
   state = {
-    value: "recents"
+    value: 0
   };
 
   handleChange = (event, value) => {
@@ -36,43 +35,37 @@ class Bottom_Navigation extends React.Component {
 
     return (
       <BottomNavigation
-        position="static"
         value={value}
         onChange={this.handleChange}
-        className={classes.root + " " + classes.primary}
+        showLabels
+        className={classes.root}
       >
-        <Link to="/home">
+        <Link to="/home" className="link">
           <BottomNavigationAction
-            label="Beranda"
-            value="Beranda"
+            label="Home"
             className={classes.site}
             icon={<HomeIcon />}
           />
         </Link>
-        <Link to="/Kampanye">
+        <Link to="/Kampanye" className="link">
           <BottomNavigationAction
-            label="Kampanye"
-            value="Kampanye"
-            as={Link}
-            to="/Kampanye"
+            label="kampanye"
             className={classes.site}
-            icon={<FavoriteIcon />}
+            icon={<RestoreIcon />}
           />
         </Link>
-        <Link to="/Donasi">
+        <Link to="/Donasi" className="link">
           <BottomNavigationAction
             label="Donasi"
-            value="Donasi"
-            className={classes.site}
-            icon={<LocationOnIcon />}
-          />
-        </Link>
-        <Link to="/profile">
-          <BottomNavigationAction
-            label="Profile"
-            value="Profile"
             className={classes.site}
             icon={<FavoriteIcon />}
+          />
+        </Link>
+        <Link to="/profile" className="link">
+          <BottomNavigationAction
+            label="profile"
+            className={classes.site}
+            icon={<LocationOnIcon />}
           />
         </Link>
       </BottomNavigation>
@@ -80,8 +73,8 @@ class Bottom_Navigation extends React.Component {
   }
 }
 
-Bottom_Navigation.propTypes = {
+SimpleBottomNavigation.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(Bottom_Navigation);
+export default withStyles(styles)(SimpleBottomNavigation);

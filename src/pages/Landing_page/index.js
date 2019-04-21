@@ -8,13 +8,7 @@ import { Link } from "react-router-dom";
 
 export default class index extends Component {
   state = {
-    text: [
-      "Belum Selesai",
-      "Telah Selesai",
-      "Product Bundling",
-      "Rawat Bumi",
-      "dll"
-    ],
+    text: ["Belum Selesai", "Telah Selesai", "Product Bundling"],
     image:
       "https://lindungihutan.com/public/img-community/-OgDRcYbNyJjEYy0qnkUm6JLTbSGCS8ap.jpg"
   };

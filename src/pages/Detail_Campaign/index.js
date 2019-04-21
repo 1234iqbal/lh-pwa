@@ -1,28 +1,33 @@
 import React, { Component } from "react";
 import Navbar from "../../component/Navbar";
 import Bottom_Navigation from "../../component/Bottom_Navigation";
-
+import DetailCampaign from "./Detail_Campaign";
+import Axios from "axios";
 export default class index extends Component {
+  state = {
+    data: [],
+    id: 120
+  };
+  componentDidMount() {
+    Axios.get(
+      "http://localhost/laravel/lh23jan18/api/detail-campaign/" + this.state.id
+    ).then(res => {
+      console.log(res);
+      const data = res.data;
+      this.setState({ data });
+    });
+  }
   render() {
+    console.log(this.state.data);
     return (
       <div>
         <Navbar />
-        <div style={{ margin: 24, paddingBottom: "20%" }}>
-          <img
-            width="100%"
-            height="200px"
-            src="https://lindungihutan.com/public/campaigns/large/11553660652pnx3qde93wwhqd4eziyglrxopwz0ddnjkvpeitwh.jpeg"
+        <div style={{ margin: 24, paddingBottom: "50px" }} className="text">
+          <DetailCampaign
+            image={this.state.data.small_image}
+            title={this.state.data.title}
+            deskripsi={this.state.data.description}
           />
-          <div style={{ paddingTop: 20 }}>
-            "Kula manggon ten mriki sampun dangu kalih warga mriki. Sak sampune
-            deso mriki keno abrasi, katah sih pindah, sak niki namung keluarga
-            kula mawon sing tasih tinggal ten mriki. (Dulu saya tinggal disini
-            bersama penduduk lainnya. Setelah abrasi, kini saya dan keluarga
-            kecil saya sendiri ditengah laut). Tonggo-tonggo kula sampun pindah,
-            namung kula mboten saged pindah amarga mboten enten arto.
-            (Tetangga-tetangga saya telah pindah, sedangkan saya tak mampu
-            pindah karena tak punya banyak uang).
-          </div>
         </div>
         <Bottom_Navigation />
       </div>

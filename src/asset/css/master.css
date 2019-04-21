@@ -5,3 +5,7 @@
 .link {
   text-decoration: none;
 }
+
+.text {
+  font-family: "PT Sans", sans-serif !important;
+}

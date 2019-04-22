@@ -8,6 +8,7 @@ import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import Avatar from "@material-ui/core/Avatar";
 import Grid from "@material-ui/core/Grid";
+
 const styles = {
   avatar: {
     margin: 10
@@ -74,8 +75,8 @@ function Profile(props) {
                     </Grid>
                     <Grid item xs={4}>
                       <center>
-                        <small>Emisi</small>
-                        <h2>20 Kg</h2>
+                        <small>Partisipasi</small>
+                        <h2>20</h2>
                       </center>
                     </Grid>
                   </Grid>

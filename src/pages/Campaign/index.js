@@ -18,13 +18,13 @@ export default class index extends Component {
       });
   }
   render() {
-    console.log(this.state.data);
     return (
       <div>
         <Navbar />
         <div style={{ paddingBottom: "58px" }} className="text">
           {this.state.data.map(data => (
             <Campaign
+              id={data.id}
               image={data.small_image}
               short_desc={data.short_description}
               deskripsi={data.description}

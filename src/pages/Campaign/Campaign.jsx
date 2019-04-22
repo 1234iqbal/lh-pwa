@@ -54,7 +54,6 @@ class Campaign extends React.Component {
 
   render() {
     const { classes } = this.props;
-
     return (
       <Card className={classes.card}>
         <CardHeader
@@ -74,7 +73,7 @@ class Campaign extends React.Component {
           title={this.props.title}
           subheader={this.props.date}
         />
-        <Link to="/detail-kampanye" className="link">
+        <Link to={"/detail-kampanye/" + this.props.id} className="link">
           <CardMedia
             className={classes.media}
             image={

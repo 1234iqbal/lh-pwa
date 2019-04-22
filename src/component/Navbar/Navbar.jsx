@@ -9,7 +9,7 @@ import MenuIcon from "@material-ui/icons/Menu";
 import AccountCircle from "@material-ui/icons/AccountCircle";
 import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
-
+import { Link, withRouter } from "react-router-dom";
 const styles = {
   root: {
     flexGrow: 1,
@@ -60,6 +60,9 @@ class Navbars extends React.Component {
         <AppBar position="static">
           <Toolbar className="color-primary">
             <IconButton
+              onClick={() => {
+                this.props.history.goBack();
+              }}
               className={classes.menuButton}
               color="inherit"
               aria-label="Menu"
@@ -109,4 +112,4 @@ Navbars.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(Navbars);
+export default withStyles(styles)(withRouter(Navbars));

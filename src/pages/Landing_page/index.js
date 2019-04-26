@@ -1,39 +1,38 @@
 import React, { Component } from "react";
 import Navbar from "../../component/Navbar";
+import Landing_page from "./Landing_page";
 import Bottom_Navigation from "../../component/Bottom_Navigation";
-import Carausel from "../../component/Carausel";
-import Card from "../../component/Card";
-import Grid from "@material-ui/core/Grid";
-import { Link } from "react-router-dom";
-
+import axios from "axios";
+import Search from "../../component/Search";
 export default class index extends Component {
   state = {
-    text: ["Belum Selesai", "Telah Selesai", "Product Bundling"],
-    image:
-      "https://lindungihutan.com/public/img-community/-OgDRcYbNyJjEYy0qnkUm6JLTbSGCS8ap.jpg"
+    data: []
   };
+
+  componentDidMount() {
+    axios
+      .get("http://localhost/laravel/lh23jan18/api/list-campaign")
+      .then(res => {
+        console.log(res);
+        const data = res.data;
+        this.setState({ data });
+      });
+  }
   render() {
     return (
       <div>
         <Navbar />
-        <Carausel />
-        <div style={{ margin: 24 }}>
-          <Grid
-            container
-            spacing={8}
-            style={{
-              paddingTop: 15,
-              paddingBottom: "58px"
-            }}
-          >
-            {this.state.text.map(res => (
-              <Grid item xs={4}>
-                <Link to="/kampanye">
-                  <Card title={res} img={this.state.image} />
-                </Link>
-              </Grid>
-            ))}
-          </Grid>
+        <div style={{ paddingBottom: "58px" }} className="text">
+          {this.state.data.map(data => (
+            <Landing_page
+              id={data.id}
+              image={data.small_image}
+              short_desc={data.short_description}
+              deskripsi={data.description}
+              title={data.title}
+              date={data.tanggal_pelaksanaan}
+            />
+          ))}
         </div>
         <Bottom_Navigation />
       </div>

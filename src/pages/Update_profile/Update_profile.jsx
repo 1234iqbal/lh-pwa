@@ -8,6 +8,7 @@ import Typography from "@material-ui/core/Typography";
 import TextField from "@material-ui/core/TextField";
 import { Link } from "react-router-dom";
 import MenuItem from "@material-ui/core/MenuItem";
+import Avatar from "@material-ui/core/Avatar";
 const styles = {
   card: {
     minWidth: 275
@@ -24,7 +25,7 @@ const styles = {
     marginBottom: 12
   },
   textField: {
-    width: "70%"
+    width: "90%"
   },
   button: {
     margin: 10,
@@ -33,6 +34,11 @@ const styles = {
     backgroundColor: "#f50057",
     color: "#fafafa",
     fontFamily: "Kavoon"
+  },
+  bigAvatar: {
+    margin: 10,
+    width: 100,
+    height: 100
   }
 };
 
@@ -59,44 +65,17 @@ function Donasi(props) {
 
           {/*  */}
 
-          <TextField
-            id="outlined-email-input"
-            label="Nominal"
-            className={classes.textField}
-            type="email"
-            name="email"
-            autoComplete="email"
-            margin="normal"
-            variant="outlined"
+          <Avatar
+            alt="Remy Sharp"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSomJuakvMDrRdbw3LGRo9fTWexX7YqxRY4vGek1GDBJNYHiRtx_g"
+            className={classes.bigAvatar}
           />
-          <br />
+
+          <Typography>Change Foto</Typography>
 
           <TextField
             id="outlined-email-input"
             label="Name"
-            className={classes.textField}
-            type="name"
-            autoComplete="email"
-            margin="normal"
-            variant="outlined"
-          />
-          <br />
-
-          <TextField
-            id="outlined-email-input"
-            label="Email"
-            className={classes.textField}
-            type="email"
-            name="email"
-            autoComplete="email"
-            margin="normal"
-            variant="outlined"
-          />
-          <br />
-
-          <TextField
-            id="outlined-email-input"
-            label="No Telp"
             className={classes.textField}
             type="email"
             name="email"
@@ -123,7 +102,7 @@ function Donasi(props) {
           <TextField
             id="outlined-select-currency"
             select
-            label="Select"
+            label="Jenis Kelamin"
             value="BRI"
             className={classes.textField}
             SelectProps={{
@@ -148,7 +127,7 @@ function Donasi(props) {
 
           <Link to="/home" className="link">
             <Button size="large" variant="contained" className={classes.button}>
-              Daftar
+              Edit Profile
             </Button>
           </Link>
         </CardContent>

@@ -4,9 +4,10 @@ import { withStyles } from "@material-ui/core/styles";
 import BottomNavigation from "@material-ui/core/BottomNavigation";
 import BottomNavigationAction from "@material-ui/core/BottomNavigationAction";
 import HomeIcon from "@material-ui/icons/Home";
-import RestoreIcon from "@material-ui/icons/Restore";
+import SearchIcon from "@material-ui/icons/Search";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import AccountCircle from "@material-ui/icons/AccountCircle";
+import AddIcon from "@material-ui/icons/Add";
 import { Link, withRouter } from "react-router-dom";
 const styles = {
   root: {
@@ -35,14 +36,9 @@ class SimpleBottomNavigation extends React.Component {
     const { value } = this.state;
 
     return (
-      <BottomNavigation
-        value={value}
-        onChange={this.handleChange}
-        showLabels
-        className={classes.root}
-      >
+      <BottomNavigation value={value} showLabels className={classes.root}>
         <BottomNavigationAction
-          label="Home"
+          // label="Home"
           onClick={() => {
             history.push("/home");
           }}
@@ -51,25 +47,34 @@ class SimpleBottomNavigation extends React.Component {
         />
 
         <BottomNavigationAction
-          label="kampanye"
+          // label="kampanye"
           onClick={() => {
             history.push("/kampanye");
           }}
           className={classes.site}
-          icon={<RestoreIcon />}
+          icon={<SearchIcon />}
         />
 
         <BottomNavigationAction
-          label="Donasi"
+          // label="kampanye"
           onClick={() => {
-            history.push("/Donasi");
+            history.push("/donasi");
+          }}
+          className={classes.site}
+          icon={<AddIcon />}
+        />
+
+        <BottomNavigationAction
+          // label="Donasi"
+          onClick={() => {
+            history.push("/notifikasi");
           }}
           className={classes.site}
           icon={<FavoriteIcon />}
         />
 
         <BottomNavigationAction
-          label="profile"
+          // label="profile"
           onClick={() => {
             history.push("/profile");
           }}

@@ -8,6 +8,7 @@ import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import Avatar from "@material-ui/core/Avatar";
 import Grid from "@material-ui/core/Grid";
+import { Link, withRouter } from "react-router-dom";
 
 const styles = {
   avatar: {
@@ -31,6 +32,9 @@ const styles = {
   },
   pos: {
     marginBottom: 12
+  },
+  button: {
+    width: "100%"
   }
 };
 
@@ -77,6 +81,19 @@ function Profile(props) {
                       <center>
                         <small>Partisipasi</small>
                         <h2>20</h2>
+                      </center>
+                    </Grid>
+                    <Grid item xs={12}>
+                      <center>
+                        <Link to="/update_profile" className="link">
+                          <Button
+                            variant="contained"
+                            color="primary"
+                            className={classes.button}
+                          >
+                            Update Profile
+                          </Button>
+                        </Link>
                       </center>
                     </Grid>
                   </Grid>
@@ -132,4 +149,4 @@ Profile.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(Profile);
+export default withStyles(styles)(withRouter(Profile));

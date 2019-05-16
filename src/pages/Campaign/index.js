@@ -6,12 +6,15 @@ import axios from "axios";
 import Search from "../../component/Search";
 export default class index extends Component {
   state = {
-    data: []
+    data: [],
+    name: "semar"
   };
 
   componentDidMount() {
     axios
-      .get("http://localhost/laravel/lh23jan18/api/list-campaign")
+      .post("http://localhost/laravel/lh23jan18/api/search-campaign", {
+        q: this.state.name
+      })
       .then(res => {
         console.log(res);
         const data = res.data;
@@ -19,14 +22,25 @@ export default class index extends Component {
       });
   }
   render() {
+    console.log(this.state.data);
     return (
       <div>
         <Navbar />
         <Search />
-        <center>
-          <div style={{ margin: 24, paddingBottom: "50px" }}>
-            anda harus search terlebih dahulu :)
-          </div>
+        {/* <div style={{ margin: 24, paddingBottom: "50px" }}>
+          anda harus search terlebih dahulu :)
+        </div> */}
+        <center style={{ margin: 24, marginTop: "30%" }}>
+          {this.state.data == [] ? (
+            "hello"
+          ) : (
+            <div>
+              <img src="https://ecs7.tokopedia.net/img/search_no_result.png" />
+              <div style={{ margin: 24, paddingBottom: "50px" }}>
+                <b>anda harus search terlebih dahulu</b>
+              </div>
+            </div>
+          )}
         </center>
         {/* <div style={{ paddingBottom: "58px" }} className="text">
           {this.state.data.map(data => (

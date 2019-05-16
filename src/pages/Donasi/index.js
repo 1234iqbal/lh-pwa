@@ -13,31 +13,12 @@ export default class index extends Component {
     bank: ""
   };
 
-  handleChange_full_name = e => {
-    this.setState({ full_name: e.target.full_name });
+  handleChange = e => {
+    e.preventDefault();
+    this.setState({ [e.target.name]: e.target.value });
   };
 
-  handleChange_amount = e => {
-    this.setState({ amount: e.target.amount });
-  };
-
-  handleChange_email = e => {
-    this.setState({ email: e.target.email });
-  };
-
-  handleChange_phone = e => {
-    this.setState({ phone: e.target.phone });
-  };
-
-  handleChange_comment = e => {
-    this.setState({ comment: e.target.comment });
-  };
-
-  handleChange_bank = e => {
-    this.setState({ bank: e.target.bank });
-  };
-
-  handleSubmit = e => {
+  onSubmit = e => {
     e.preventDefault();
     Axios.post("http://localhost/laravel/lh23jan18/api/donasi", {
       name: this.state.name,
@@ -56,7 +37,7 @@ export default class index extends Component {
       <div>
         <Navbar />
         <div style={{ margin: 24, paddingBottom: "50px" }}>
-          <Donasi />
+          <Donasi submit={this.onSubmit} handle={this.handleChange} />
         </div>
         <Bottom_Navigation />
       </div>

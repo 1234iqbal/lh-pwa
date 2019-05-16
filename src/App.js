@@ -10,13 +10,19 @@ import Update_profile from "./pages/Update_profile";
 import "./asset/css/master.css";
 import Donasi from "./pages/Donasi";
 import Detail_Campaign from "./pages/Detail_Campaign";
+import Logout from "./pages/Logout/Logout";
 class App extends Component {
+  componentDidMount() {
+    const jwt = sessionStorage.getItem("token");
+  }
+
   render() {
     return (
       <Router>
         <div>
           <Route path="/" exact component={Login} />
           <Route path="/register" exact component={Register} />
+          <Route path="/logout" exact component={Logout} />
           <Route path="/profile" exact component={Profile} />
           <Route path="/home" exact component={Landing_page} />
           <Route path="/kampanye" exact component={Campaign} />

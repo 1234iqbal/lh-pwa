@@ -13,7 +13,6 @@ import Divider from "@material-ui/core/Divider";
 const styles = theme => ({
   root: {
     width: "100%",
-    maxWidth: 360,
     backgroundColor: theme.palette.background.paper
   }
 });

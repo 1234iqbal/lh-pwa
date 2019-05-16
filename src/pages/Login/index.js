@@ -1,78 +1,34 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { withStyles } from "@material-ui/core/styles";
-import Button from "@material-ui/core/Button";
-import TextField from "@material-ui/core/TextField";
-import Typography from "@material-ui/core/Typography";
-import { Link } from "react-router-dom";
-const styles = {
-  root: {
-    paddingTop: "150px",
-    textAlign: "center",
-    backgroundColor: "none"
-  },
-  button: {
-    margin: 10,
-    width: 150,
-    backgroundColor: "#f50057",
-    color: "#fafafa",
-    fontFamily: "Kavoon"
-  },
-  text: {
-    color: "#045f50",
-    fontFamily: "Bevan"
-  },
-  textField: {
-    width: "70%"
-  }
-};
+import React, { Component } from "react";
+import Login from "./Login";
+import axios from "axios";
 
-function Index(props) {
-  const { classes } = props;
+export default class index extends Component {
+  state = {
+    email: "",
+    password: ""
+  };
+  OnSubmit = e => {
+    e.preventDefault();
+    axios
+      .post("http://localhost/laravel/lh23jan18/api/login", {
+        email: this.state.email,
+        password: this.state.password
+      })
+      .then(res => {
+        console.log(res);
+      });
+  };
 
-  return (
-    <div className={classes.root}>
-      <Typography variant="h4" className={classes.text} gutterBottom>
-        Lindungi Hutan
-      </Typography>
-      <TextField
-        id="outlined-email-input"
-        label="Email"
-        className={classes.textField}
-        type="email"
-        name="email"
-        autoComplete="email"
-        margin="normal"
-        variant="outlined"
-      />
-      <br />
-      <TextField
-        id="outlined-password-input"
-        label="Password"
-        className={classes.textField}
-        type="password"
-        autoComplete="current-password"
-        margin="normal"
-        variant="outlined"
-      />
-      <br />
-      <Link to="/home" className="link">
-        <Button size="large" variant="contained" className={classes.button}>
-          Masuk
-        </Button>
-      </Link>
-      <div style={{ paddingTop: 30 }}>
-        Belum punya akun lindungihutan?{" "}
-        <Link to="/register" className="link">
-          Daftar
-        </Link>
+  HandleChange = e => {
+    e.preventDefault();
+    this.setState({ [e.target.name]: e.target.value });
+  };
+
+  render() {
+    return (
+      <div>
+        <Login handle={this.HandleChange} submit={this.OnSubmit} />
       </div>
-    </div>
-  );
+    );
+  }
 }
-
-Index.propTypes = {
-  classes: PropTypes.object.isRequired
-};
-
-export default withStyles(styles)(Index);

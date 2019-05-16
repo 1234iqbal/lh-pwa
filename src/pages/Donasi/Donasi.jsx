@@ -53,104 +53,105 @@ function Donasi(props) {
             kampanye alam kami
           </Typography>
 
-          {/* <Typography className={classes.pos} color="textSecondary">
-            adjective
-          </Typography> */}
-
           {/*  */}
+          <form onSubmit={props.submit}>
+            <TextField
+              id="outlined-email-input"
+              label="Nominal"
+              className={classes.textField}
+              onChange={props.handle}
+              type="email"
+              name="email"
+              autoComplete="email"
+              margin="normal"
+              variant="outlined"
+            />
+            <br />
 
-          <TextField
-            id="outlined-email-input"
-            label="Nominal"
-            className={classes.textField}
-            type="email"
-            name="email"
-            autoComplete="email"
-            margin="normal"
-            variant="outlined"
-          />
-          <br />
+            <TextField
+              id="outlined-email-input"
+              label="Name"
+              className={classes.textField}
+              onChange={props.handle}
+              type="name"
+              autoComplete="email"
+              margin="normal"
+              variant="outlined"
+            />
+            <br />
 
-          <TextField
-            id="outlined-email-input"
-            label="Name"
-            className={classes.textField}
-            type="name"
-            autoComplete="email"
-            margin="normal"
-            variant="outlined"
-          />
-          <br />
+            <TextField
+              id="outlined-email-input"
+              label="Email"
+              className={classes.textField}
+              onChange={props.handle}
+              type="email"
+              name="email"
+              autoComplete="email"
+              margin="normal"
+              variant="outlined"
+            />
+            <br />
 
-          <TextField
-            id="outlined-email-input"
-            label="Email"
-            className={classes.textField}
-            type="email"
-            name="email"
-            autoComplete="email"
-            margin="normal"
-            variant="outlined"
-          />
-          <br />
+            <TextField
+              id="outlined-email-input"
+              label="No Telp"
+              className={classes.textField}
+              onChange={props.handle}
+              type="email"
+              name="email"
+              autoComplete="email"
+              margin="normal"
+              variant="outlined"
+            />
+            <br />
 
-          <TextField
-            id="outlined-email-input"
-            label="No Telp"
-            className={classes.textField}
-            type="email"
-            name="email"
-            autoComplete="email"
-            margin="normal"
-            variant="outlined"
-          />
-          <br />
+            <TextField
+              id="outlined-email-input"
+              label="komentar"
+              multiline
+              rowsMax="18"
+              className={classes.textField}
+              onChange={props.handle}
+              type="email"
+              name="email"
+              autoComplete="email"
+              margin="normal"
+              variant="outlined"
+            />
+            <br />
 
-          <TextField
-            id="outlined-email-input"
-            label="komentar"
-            multiline
-            rowsMax="18"
-            className={classes.textField}
-            type="email"
-            name="email"
-            autoComplete="email"
-            margin="normal"
-            variant="outlined"
-          />
-          <br />
+            <TextField
+              id="outlined-select-currency"
+              select
+              label="Select"
+              value="BRI"
+              onChange={props.handle}
+              className={classes.textField}
+              SelectProps={{
+                MenuProps: {
+                  className: classes.menu
+                }
+              }}
+              helperText="Please select your currency"
+              margin="normal"
+              variant="outlined"
+            >
+              <MenuItem key="BRI" value="BRI">
+                BRI
+              </MenuItem>
+              <MenuItem key="BCA" value="BCA">
+                BCA
+              </MenuItem>
+              <MenuItem key="MANDIRI" value="MANDIRI">
+                MANDIRI
+              </MenuItem>
+            </TextField>
 
-          <TextField
-            id="outlined-select-currency"
-            select
-            label="Select"
-            value="BRI"
-            className={classes.textField}
-            SelectProps={{
-              MenuProps: {
-                className: classes.menu
-              }
-            }}
-            helperText="Please select your currency"
-            margin="normal"
-            variant="outlined"
-          >
-            <MenuItem key="BRI" value="BRI">
-              BRI
-            </MenuItem>
-            <MenuItem key="BCA" value="BCA">
-              BCA
-            </MenuItem>
-            <MenuItem key="MANDIRI" value="MANDIRI">
-              MANDIRI
-            </MenuItem>
-          </TextField>
-
-          <Link to="/home" className="link">
             <Button size="large" variant="contained" className={classes.button}>
               Daftar
             </Button>
-          </Link>
+          </form>
         </CardContent>
       </center>
     </Card>

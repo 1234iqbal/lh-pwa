@@ -5,7 +5,9 @@ export default class Detail_Campaign extends Component {
   render() {
     return (
       <div>
-        <div>{this.props.title}</div>
+        <div style={{ paddingBottom: 20 }}>
+          <b>{this.props.title}</b>
+        </div>
         <img
           width="100%"
           height="200px"

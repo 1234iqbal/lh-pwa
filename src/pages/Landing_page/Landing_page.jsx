@@ -86,7 +86,7 @@ class Landing_page extends React.Component {
             <Typography component="p">{this.props.short_desc}</Typography>
           </CardContent>
         </Link>
-        <CardActions className={classes.actions} disableActionSpacing>
+        {/* <CardActions className={classes.actions} disableActionSpacing>
           <IconButton aria-label="Add to favorites">
             <FavoriteIcon />
           </IconButton>
@@ -110,7 +110,7 @@ class Landing_page extends React.Component {
               {ReactHtmlParser(this.props.deskripsi)}
             </Typography>
           </CardContent>
-        </Collapse>
+        </Collapse> */}
       </Card>
     );
   }

@@ -10,13 +10,11 @@ export default class index extends Component {
   };
 
   componentDidMount() {
-    axios
-      .get("http://localhost/laravel/lh23jan18/api/list-campaign")
-      .then(res => {
-        console.log(res);
-        const data = res.data;
-        this.setState({ data });
-      });
+    axios.get("https://lindungihutan.com/api/list-campaign").then(res => {
+      console.log(res);
+      const data = res.data;
+      this.setState({ data });
+    });
   }
   render() {
     return (

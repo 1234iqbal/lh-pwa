@@ -149,7 +149,7 @@ function Donasi(props) {
             </TextField>
 
             <Button size="large" variant="contained" className={classes.button}>
-              Daftar
+              Donasi
             </Button>
           </form>
         </CardContent>

@@ -10,7 +10,7 @@ export default class index extends Component {
   };
   componentDidMount() {
     Axios.get(
-      "http://localhost/laravel/lh23jan18/api/detail-campaign/" +
+      "https://lindungihutan.com/api/detail-campaign/" +
         this.props.match.params.id
     ).then(res => {
       console.log(res);

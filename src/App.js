@@ -11,6 +11,7 @@ import "./asset/css/master.css";
 import Donasi from "./pages/Donasi";
 import Detail_Campaign from "./pages/Detail_Campaign";
 import Logout from "./pages/Logout/Logout";
+import Nota from "./pages/Nota";
 class App extends Component {
   componentDidMount() {
     const jwt = sessionStorage.getItem("token");
@@ -31,6 +32,7 @@ class App extends Component {
             exact
             component={Detail_Campaign}
           />
+          <Route path="/nota" exact component={Nota} />
           <Route path="/notifikasi" exact component={Notifikasi} />
           <Route path="/update_profile" exact component={Update_profile} />
           <Route path="/donasi" exact component={Donasi} />

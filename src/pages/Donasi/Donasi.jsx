@@ -125,8 +125,8 @@ function Donasi(props) {
               id="outlined-select-currency"
               select
               label="Select"
-              value="BRI"
-              onChange={props.handle}
+              value={props.bank}
+              onClick={props.handle}
               className={classes.textField}
               SelectProps={{
                 MenuProps: {

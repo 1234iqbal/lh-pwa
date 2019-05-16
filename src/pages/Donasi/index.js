@@ -10,7 +10,7 @@ export default class index extends Component {
     email: "",
     phone: "",
     comment: "",
-    bank: ""
+    bank: "BRI"
   };
 
   handleChange = e => {
@@ -37,7 +37,11 @@ export default class index extends Component {
       <div>
         <Navbar />
         <div style={{ margin: 24, paddingBottom: "50px" }}>
-          <Donasi submit={this.onSubmit} handle={this.handleChange} />
+          <Donasi
+            submit={this.onSubmit}
+            handle={this.handleChange}
+            bank={this.state.bank}
+          />
         </div>
         <Bottom_Navigation />
       </div>

@@ -71,7 +71,10 @@ function Donasi(props) {
             className={classes.bigAvatar}
           />
 
-          <Typography>Change Foto</Typography>
+          <Typography>
+            Change Foto
+            <input type="file" />
+          </Typography>
 
           <TextField
             id="outlined-email-input"

@@ -35,55 +35,66 @@ function Register(props) {
       <Typography variant="h4" className={classes.text} gutterBottom>
         Lindungi Hutan
       </Typography>
+      <form onSubmit={props.submit} method="get">
+        <TextField
+          id="outlined-email-input"
+          label="Name"
+          className={classes.textField}
+          onChange={props.handle}
+          type="text"
+          name="name"
+          autoComplete="email"
+          margin="normal"
+          variant="outlined"
+        />
+        <br />
 
-      <TextField
-        id="outlined-email-input"
-        label="Name"
-        className={classes.textField}
-        type="name"
-        autoComplete="email"
-        margin="normal"
-        variant="outlined"
-      />
-      <br />
+        <TextField
+          id="outlined-email-input"
+          label="Email"
+          className={classes.textField}
+          onChange={props.handle}
+          type="email"
+          name="email"
+          autoComplete="email"
+          margin="normal"
+          variant="outlined"
+        />
+        <br />
 
-      <TextField
-        id="outlined-email-input"
-        label="Email"
-        className={classes.textField}
-        type="email"
-        name="email"
-        autoComplete="email"
-        margin="normal"
-        variant="outlined"
-      />
-      <br />
-
-      <TextField
-        id="outlined-password-input"
-        label="Password"
-        className={classes.textField}
-        type="password"
-        autoComplete="current-password"
-        margin="normal"
-        variant="outlined"
-      />
-      <br />
-      <TextField
-        id="outlined-password-input"
-        label="Confrim Password"
-        className={classes.textField}
-        type="password"
-        autoComplete="current-password"
-        margin="normal"
-        variant="outlined"
-      />
-      <br />
-      <Link to="/home" className="link">
-        <Button size="large" variant="contained" className={classes.button}>
+        <TextField
+          id="outlined-password-input"
+          label="Password"
+          className={classes.textField}
+          onChange={props.handle}
+          type="password"
+          name="password"
+          autoComplete="current-password"
+          margin="normal"
+          variant="outlined"
+        />
+        <br />
+        <TextField
+          id="outlined-password-input"
+          label="Confrim Password"
+          className={classes.textField}
+          onChange={props.handle}
+          type="password"
+          name="confirm_password"
+          autoComplete="current-password"
+          margin="normal"
+          variant="outlined"
+        />
+        <br />
+        <Button
+          size="large"
+          variant="contained"
+          type="submit"
+          className={classes.button}
+        >
           Daftar
         </Button>
-      </Link>
+      </form>
       <div style={{ paddingTop: 30 }}>
         Sudah punya akun lindungihutan?{" "}
         <Link to="/" className="link">

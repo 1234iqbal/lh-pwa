@@ -54,7 +54,7 @@ function Login(props) {
           label="Password"
           className={classes.textField}
           onChange={props.handle}
-          name="name"
+          name="password"
           type="password"
           autoComplete="current-password"
           margin="normal"

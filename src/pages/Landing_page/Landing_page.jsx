@@ -55,38 +55,34 @@ class Landing_page extends React.Component {
   render() {
     const { classes } = this.props;
     return (
-      <Card className={classes.card}>
-        <CardHeader
-          avatar={
-            <Avatar aria-label="Recipe" className={classes.avatar}>
-              <img
-                width="100%"
-                src="https://lindungihutan.com/public/img-partner/-rWWriHeOuA0k2CQBXCXhHxNJweyvsWnA.jpeg"
-              />
-            </Avatar>
-          }
-          action={
-            <IconButton>
-              <MoreVertIcon />
-            </IconButton>
-          }
-          title={this.props.title}
-          subheader={this.props.date}
-        />
-        <Link to={"/detail-kampanye/" + this.props.id} className="link">
-          <CardMedia
-            className={classes.media}
-            image={
-              "https://lindungihutan.com/public/campaigns/small/" +
-              this.props.image
+      <div style={{ paddingTop: "5px" }}>
+        <Card className={classes.card}>
+          <CardHeader
+            avatar={
+              <Avatar aria-label="Recipe" className={classes.avatar}>
+                <img
+                  width="100%"
+                  src="https://lindungihutan.com/public/img-partner/-rWWriHeOuA0k2CQBXCXhHxNJweyvsWnA.jpeg"
+                />
+              </Avatar>
             }
-            title="Paella dish"
+            title={this.props.title}
+            subheader={this.props.date}
           />
-          <CardContent>
-            <Typography component="p">{this.props.short_desc}</Typography>
-          </CardContent>
-        </Link>
-        {/* <CardActions className={classes.actions} disableActionSpacing>
+          <Link to={"/detail-kampanye/" + this.props.id} className="link">
+            <CardMedia
+              className={classes.media}
+              image={
+                "https://lindungihutan.com/public/campaigns/small/" +
+                this.props.image
+              }
+              title="Paella dish"
+            />
+            <CardContent>
+              <Typography component="p">{this.props.short_desc}</Typography>
+            </CardContent>
+          </Link>
+          {/* <CardActions className={classes.actions} disableActionSpacing>
           <IconButton aria-label="Add to favorites">
             <FavoriteIcon />
           </IconButton>
@@ -111,7 +107,8 @@ class Landing_page extends React.Component {
             </Typography>
           </CardContent>
         </Collapse> */}
-      </Card>
+        </Card>
+      </div>
     );
   }
 }

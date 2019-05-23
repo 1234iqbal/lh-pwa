@@ -5,6 +5,7 @@ import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import IconButton from "@material-ui/core/IconButton";
+import MoreIcon from "@material-ui/icons/MoreVert";
 import MenuIcon from "@material-ui/icons/Menu";
 import AccountCircle from "@material-ui/icons/AccountCircle";
 import MenuItem from "@material-ui/core/MenuItem";
@@ -59,7 +60,7 @@ class Navbars extends React.Component {
                 </FormGroup> */}
         <AppBar position="static">
           <Toolbar className="color-primary">
-            <IconButton
+            {/* <IconButton
               onClick={() => {
                 this.props.history.goBack();
               }}
@@ -68,7 +69,7 @@ class Navbars extends React.Component {
               aria-label="Menu"
             >
               <MenuIcon />
-            </IconButton>
+            </IconButton> */}
             <Typography variant="h6" color="inherit" className={classes.grow}>
               Lindungi Hutan
             </Typography>
@@ -80,8 +81,9 @@ class Navbars extends React.Component {
                   onClick={this.handleMenu}
                   color="inherit"
                 >
-                  <AccountCircle />
+                  <MoreIcon />
                 </IconButton>
+
                 <Menu
                   id="menu-appbar"
                   anchorEl={anchorEl}
@@ -96,8 +98,20 @@ class Navbars extends React.Component {
                   open={open}
                   onClose={this.handleClose}
                 >
-                  <MenuItem onClick={this.handleClose}>Profile</MenuItem>
-                  <MenuItem onClick={this.handleClose}>My account</MenuItem>
+                  <MenuItem
+                    onClick={() => {
+                      this.props.history.push("/profile");
+                    }}
+                  >
+                    Profil
+                  </MenuItem>
+                  <MenuItem
+                    onClick={() => {
+                      this.props.history.push("/logout");
+                    }}
+                  >
+                    Logout
+                  </MenuItem>
                 </Menu>
               </div>
             )}

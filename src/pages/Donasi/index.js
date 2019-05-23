@@ -10,7 +10,7 @@ export default class index extends Component {
     email: "",
     phone: "",
     comment: "",
-    bank: "BRI"
+    bank: ""
   };
 
   handleChange = e => {
@@ -20,19 +20,20 @@ export default class index extends Component {
 
   onSubmit = e => {
     e.preventDefault();
-    Axios.post("http://localhost/laravel/lh23jan18/api/donasi", {
-      name: this.state.name,
-      amount: this.state.amount,
-      email: this.state.email,
-      phone: this.state.phone,
-      comment: this.state.comment,
-      bank: this.state.bank
-    }).then(res => {
+    Axios.get(
+      `http://localhost/laravel/lh23jan18/api/donasi?full_name=${
+        this.state.full_name
+      }&amount=${this.state.amount}&email=${this.state.email}&phone=${
+        this.state.phone
+      }&comment=${this.state.comment}&bank=${this.state.bank}`
+    ).then(res => {
       console.log(res);
     });
   };
 
   render() {
+    const data = this.props.user;
+    console.log(data);
     return (
       <div>
         <Navbar />

@@ -54,15 +54,15 @@ function Donasi(props) {
           </Typography>
 
           {/*  */}
-          <form onSubmit={props.submit}>
+          <form onSubmit={props.submit} method="post">
             <TextField
-              id="outlined-email-input"
+              id="outlined-text-input"
               label="Nominal"
               className={classes.textField}
               onChange={props.handle}
-              type="email"
-              name="email"
-              autoComplete="email"
+              type="text"
+              name="amount"
+              autoComplete="text"
               margin="normal"
               variant="outlined"
             />
@@ -74,6 +74,7 @@ function Donasi(props) {
               className={classes.textField}
               onChange={props.handle}
               type="name"
+              name="full_name"
               autoComplete="email"
               margin="normal"
               variant="outlined"
@@ -85,6 +86,7 @@ function Donasi(props) {
               label="Email"
               className={classes.textField}
               onChange={props.handle}
+              value={props.email}
               type="email"
               name="email"
               autoComplete="email"
@@ -94,13 +96,13 @@ function Donasi(props) {
             <br />
 
             <TextField
-              id="outlined-email-input"
+              id="outlined-text-input"
               label="No Telp"
               className={classes.textField}
               onChange={props.handle}
-              type="email"
-              name="email"
-              autoComplete="email"
+              type="text"
+              name="phone"
+              autoComplete="text"
               margin="normal"
               variant="outlined"
             />
@@ -114,7 +116,7 @@ function Donasi(props) {
               className={classes.textField}
               onChange={props.handle}
               type="email"
-              name="email"
+              name="comment"
               autoComplete="email"
               margin="normal"
               variant="outlined"
@@ -122,6 +124,21 @@ function Donasi(props) {
             <br />
 
             <TextField
+              id="outlined-bank-input"
+              label="Bank"
+              multiline
+              rowsMax="18"
+              className={classes.textField}
+              onChange={props.handle}
+              type="bank"
+              name="bank"
+              autoComplete="bank"
+              margin="normal"
+              variant="outlined"
+            />
+            <br />
+
+            {/* <TextField
               id="outlined-select-currency"
               select
               label="Select"
@@ -136,8 +153,9 @@ function Donasi(props) {
               helperText="Please select your currency"
               margin="normal"
               variant="outlined"
-            >
-              <MenuItem key="BRI" value="BRI">
+            > */}
+
+            {/*<MenuItem key="BRI" value="BRI">
                 BRI
               </MenuItem>
               <MenuItem key="BCA" value="BCA">
@@ -146,9 +164,14 @@ function Donasi(props) {
               <MenuItem key="MANDIRI" value="MANDIRI">
                 MANDIRI
               </MenuItem>
-            </TextField>
+            </TextField>*/}
 
-            <Button size="large" variant="contained" className={classes.button}>
+            <Button
+              type="submit"
+              size="large"
+              variant="contained"
+              className={classes.button}
+            >
               Donasi
             </Button>
           </form>

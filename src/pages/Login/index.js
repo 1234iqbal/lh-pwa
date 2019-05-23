@@ -5,17 +5,30 @@ import axios from "axios";
 export default class index extends Component {
   state = {
     email: "",
-    password: ""
+    password: "",
+    error: ""
   };
-  OnSubmit = e => {
+  OnSubmit = async e => {
     e.preventDefault();
     axios
-      .post("http://localhost/laravel/lh23jan18/api/login", {
-        email: this.state.email,
-        password: this.state.password
-      })
+      .get(
+        `http://localhost/laravel/lh23jan18/api/login?email=${
+          this.state.email
+        }&password=${this.state.password}`
+      )
       .then(res => {
-        console.log(res);
+        try {
+          console.log(res.data.meta.api_token);
+          const token = res.data.meta.api_token;
+          localStorage.setItem("token", token);
+          window.location = "/home";
+        } catch (ex) {
+          if (ex.res && ex.res.status === 400) {
+            const error = { ...this.state.error };
+            error.email = ex.res.data;
+            this.setState({ error });
+          }
+        }
       });
   };
 

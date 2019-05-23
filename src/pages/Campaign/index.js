@@ -2,37 +2,55 @@ import React, { Component } from "react";
 import Navbar from "../../component/Navbar";
 import Campaign from "./Campaign";
 import Bottom_Navigation from "../../component/Bottom_Navigation";
-import axios from "axios";
+import Axios from "axios";
 import Search from "../../component/Search";
 export default class index extends Component {
   state = {
     data: [],
-    name: "semar"
+    name: ""
   };
 
   componentDidMount() {
-    axios
-      .post("http://localhost/laravel/lh23jan18/api/search-campaign", {
-        q: this.state.name
-      })
-      .then(res => {
-        console.log(res);
-        const data = res.data;
-        this.setState({ data });
-      });
+    Axios.post("http://localhost/laravel/lh23jan18/api/search-campaign", {
+      q: this.state.name
+    }).then(res => {
+      console.log(res);
+      const data = res.data;
+      this.setState({ data });
+    });
   }
+
+  handleKeyPress(event) {
+    if (event.key === "Enter") {
+      this.props.history.push("/search");
+      // var name = event.target.value;
+      // Axios.get(
+      //   `http://localhost/laravel/lh23jan18/api/search-campaign?q=${name}`
+      // ).then(res => {
+      //   console.log(res.data);
+      //   const datas = res.data;
+      //   this.setState({ data: datas });
+      // });
+    }
+  }
+
+  handleChange = e => {
+    e.preventDefault();
+    this.setState({ [e.target.name]: e.target.value });
+  };
+
   render() {
     console.log(this.state.data);
     return (
       <div>
         <Navbar />
-        <Search />
-        {/* <div style={{ margin: 24, paddingBottom: "50px" }}>
-          anda harus search terlebih dahulu :)
-        </div> */}
+        <Search handle={this.handleChange} submit={this.handleKeyPress} />
+
         <center style={{ margin: 24, marginTop: "30%" }}>
-          {this.state.data == [] ? (
-            "hello"
+          {!this.state.data === [] ? (
+            <div style={{ margin: 24, paddingBottom: "50px" }}>
+              <Campaign />
+            </div>
           ) : (
             <div>
               <img src="https://ecs7.tokopedia.net/img/search_no_result.png" />

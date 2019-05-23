@@ -28,6 +28,7 @@ export default class index extends Component {
       }&comment=${this.state.comment}&bank=${this.state.bank}`
     ).then(res => {
       console.log(res);
+      this.props.history.push("/nota");
     });
   };
 

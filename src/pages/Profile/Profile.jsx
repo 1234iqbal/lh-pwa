@@ -120,7 +120,7 @@ function Profile(props) {
 
       {/*  */}
       <Typography className={classes.title} color="textSecondary" gutterBottom>
-        History Kontribusi Lindungi Hutan
+        Info Donation
       </Typography>
       <div style={{ paddingBottom: "20px" }}>
         <Card className={classes.card}>

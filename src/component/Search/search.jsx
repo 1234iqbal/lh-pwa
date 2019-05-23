@@ -54,6 +54,7 @@ const styles = theme => ({
 class PrimarySearchAppBar extends React.Component {
   render() {
     const { classes } = this.props;
+
     return (
       <div className={classes.root}>
         <Toolbar>
@@ -61,8 +62,12 @@ class PrimarySearchAppBar extends React.Component {
             <div className={classes.searchIcon}>
               <SearchIcon />
             </div>
+
             <InputBase
               placeholder="Search…"
+              name="name"
+              onKeyPress={this.props.submit}
+              onChange={this.props.handle}
               classes={{
                 root: classes.inputRoot,
                 input: classes.inputInput
